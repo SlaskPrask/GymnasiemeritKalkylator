@@ -468,8 +468,8 @@ HRESULT Window::_WriteDataToFile(HANDLE hFile, PCWSTR pszDataIn)
 				hr = WriteFile(hFile, pszData, cbData - 1, &dwBytesWritten, NULL)
 					? S_OK : HRESULT_FROM_WIN32(GetLastError());
 			}
-			delete[] pszData;		
 		}
+		delete[] pszData;
 	}
 	return hr;
 }
@@ -516,8 +516,8 @@ HRESULT Window::_WritePropertyToCustomFile(PCWSTR pszFileName, PCWSTR pszPropert
 					hr = _WriteDataToFile(hFile, pszPropertyLine);
 				}
 			}
-			delete[] pszPropertyLine;
 		}
+		delete[] pszPropertyLine;
 		CloseHandle(hFile);
 	}
 	return hr;
